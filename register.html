@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css" rel="stylesheet">
+</head>
+<body>
+    <div class="wrapper">
+        <form onsubmit="saveData(event)">
+            <h1>Register</h1>
+            <div class="input-box">
+                <input type="text" id="registerUsername" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="registerPhone" placeholder="Phone Number" required>
+                <i class='bx bxs-phone'></i>
+            </div>
+            <div class="input-box">
+                <select id="registerGender" required>
+                    <option value="">Select Gender</option>
+                    <option value="Male">Male</option>
+                    <option value="Female">Female</option>
+                    <option value="Other">Other</option>
+                </select>
+            </div>
+            <div class="input-box">
+                <input type="date" id="registerDOB" required>
+                <i class='bx bx-calendar'></i>
+            </div>
+            <div class="input-box">
+                <input type="email" id="registerEmail" placeholder="Email Address" required>
+                <i class='bx bx-envelope'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="registerCountry" placeholder="Country" required>
+                <i class='bx bx-globe'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="registerState" placeholder="State" required>
+                <i class='bx bx-map'></i>
+            </div>
+            <div class="input-box">
+                <input type="text" id="registerAddress" placeholder="Address" required>
+                <i class='bx bx-home'></i>
+            </div>
+            <div class="input-box">
+                <input type="file" id="registerFile" required>
+                <i class='bx bx-upload'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="registerPassword" placeholder="Password" required>
+                <i class='bx bx-lock'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="registerConfirmPassword" placeholder="Confirm Password" required>
+                <i class='bx bx-lock'></i>
+            </div>
+            <button type="submit" class="btn">Register</button>
+            <p>Already have an account? <a href="login.html">login</a></p>
+        </form>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

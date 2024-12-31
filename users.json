@@ -1,0 +1,58 @@
+[
+  {
+    "username": "apar",
+    "phone": "5678687689",
+    "gender": "Male",
+    "dob": "2024-12-07",
+    "email": "apar@gmail.com",
+    "country": "UAE",
+    "state": "dubai",
+    "password": "apar123"
+  },
+  {
+    "username": "komal",
+    "phone": "5678788999709",
+    "gender": "Female",
+    "dob": "2024-12-13",
+    "email": "komal@gmail.com",
+    "country": "USA",
+    "state": "goa",
+    "password": "komu@123"
+  },
+  {
+    "username": "Arushika",
+    "phone": "6284512651",
+    "gender": "Female",
+    "dob": "2024-12-05",
+    "email": "aru123@gmail.com",
+    "country": "India",
+    "state": "punjab",
+    "address": "green avenue",
+    "file": "freepik__adjust__15951.png",
+    "password": "aruu"
+  },
+  {
+    "username": "khushi",
+    "phone": "7643746287",
+    "gender": "Female",
+    "dob": "2024-12-07",
+    "email": "khushi@gmail.com",
+    "country": "India",
+    "state": "punjab",
+    "address": "kapurthala",
+    "file": "freepik__adjust__15951.png",
+    "password": "khushi123"
+  },
+  {
+    "username": "aryan",
+    "phone": "4576788999",
+    "gender": "Male",
+    "dob": "2024-12-13",
+    "email": "aryan@gmail.com",
+    "country": "India",
+    "state": "PUNJAB",
+    "address": "Green Avenue",
+    "file": "rb_20261_cleanup.png",
+    "password": "aryan123"
+  }
+]

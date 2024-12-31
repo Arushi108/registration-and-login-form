@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    <div class="wrapper">
+        <form id="loginForm">
+            <h1>Login</h1>
+            <div class="input-box">
+                <input type="text" id="loginUsername" placeholder="Username" required>
+                <i class='bx bxs-user'></i>
+            </div>
+            <div class="input-box">
+                <input type="password" id="loginPassword" placeholder="Password" required>
+                <i class='bx bx-lock'></i>
+            </div>
+            <div class="remember-forgot">
+                <label><input type="checkbox" id="rememberMe">Remember me</label>
+                <a href="#">Forgot password?</a>
+            </div>
+            <button type="submit" class="btn">Login</button>
+            <div id="errorMessage" class="error-message" style="color: red; display: none;">Invalid Username or Password.</div>
+            <div class="register-link">
+                <p>Don't have an account?<a href="register.html">Register</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        // Get DOM elements
+        const loginForm = document.getElementById("loginForm");
+        const usernameInput = document.getElementById("loginUsername");
+        const passwordInput = document.getElementById("loginPassword");
+        const rememberMeCheckbox = document.getElementById("rememberMe");
+        const errorMessage = document.getElementById("errorMessage");
+
+        // Check if "Remember Me" data exists
+        window.addEventListener("load", () => {
+            const storedUsername = localStorage.getItem("rememberedUsername");
+            const storedPassword = localStorage.getItem("rememberedPassword");
+
+            if (storedUsername && storedPassword) {
+                usernameInput.value = storedUsername;
+                passwordInput.value = storedPassword;
+                rememberMeCheckbox.checked = true;
+            }
+        });
+
+        // Handle login form submission
+        loginForm.addEventListener("submit", (e) => {
+            e.preventDefault(); // Prevent page reload
+
+            const enteredUsername = usernameInput.value;
+            const enteredPassword = passwordInput.value;
+
+            // Get all registered users from localStorage
+            const users = JSON.parse(localStorage.getItem("users")) || [];
+
+            // Check if entered credentials match any registered user
+            const matchingUser = users.find(user =>
+                user.username === enteredUsername && user.password === enteredPassword
+            );
+
+            if (matchingUser) {
+                alert("Login Successful!");
+
+                // Save "Remember Me" data
+                if (rememberMeCheckbox.checked) {
+                    localStorage.setItem("rememberedUsername", enteredUsername);
+                    localStorage.setItem("rememberedPassword", enteredPassword);
+                } else {
+                    localStorage.removeItem("rememberedUsername");
+                    localStorage.removeItem("rememberedPassword");
+                }
+
+                // Redirect to a dashboard or welcome page if needed
+                // window.location.href = "welcome.html"; // Replace with your target page
+            } else {
+                // Show error message for invalid credentials
+                errorMessage.style.display = "block";
+            }
+        });
+
+        // Hide error message on input
+        usernameInput.addEventListener("input", () => {
+            errorMessage.style.display = "none";
+        });
+
+        passwordInput.addEventListener("input", () => {
+            errorMessage.style.display = "none";
+        });
+    </script>
+</body>
+</html>
